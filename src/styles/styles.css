@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navb{
+    background-color: rgb(141, 55, 2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    height: 75px;
+    width: 150px;
+    border-radius: 30px;
+}
