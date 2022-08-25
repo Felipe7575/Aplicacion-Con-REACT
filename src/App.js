@@ -1,13 +1,18 @@
 import JustifiedExample from "./components/NavBar";
 import NavBar from "./components/NavBar";
-import './styles/styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CarritoIcon from "./components/CarritoIcon";
+import ItemListContainer from "./components/ItemListContainer";
+
 
 function App() {
   
   return (
     <div >
-        <NavBar/>
+        <NavBar>
+           <CarritoIcon CANT={5}/>
+        </NavBar>
+        <ItemListContainer></ItemListContainer>
     </div>
   );
 }

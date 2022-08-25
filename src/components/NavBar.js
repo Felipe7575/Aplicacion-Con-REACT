@@ -1,5 +1,6 @@
-import '../styles/styles.css'
+
 import LOGO from '../assets/img/LOGO.png'
+
 
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -9,20 +10,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
-const NavBar = () => {
+
+
+
+const NavBar = ({CANT , children}) => {
   return (
     // <div className='navb' style={{height:150 ,width: "100vw", backgroundColor: "#FD876"}}>
 
     //     <img src={LOGO} style={{height: 100, width: 100}} alt="LOGO DE 3D RAMOS"/>
-    //     <a href="./index.html" className='boton'> INICIO </a>
+    //     <a href="./index.html" className='boton'>  INICIO </a>
     //     <a href="./index.html" className='boton'> PRODUCTOS </a>
     //     <a href="./index.html" className='boton'> NOSOTROS </a>
     // </div>
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={LOGO} style={{height: 50, width: 50}}></img> TODO 3D RAMOS </Navbar.Brand>
+        <Navbar.Brand href="#"><img src={LOGO} style={{height: 50, width: 50}} alt="LOGO DE 3D RAMOS" ></img> TODO 3D RAMOS </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" >
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
@@ -50,10 +54,13 @@ const NavBar = () => {
             />
             <Button variant="outline-success">BUSCAR</Button>
           </Form>
+          {children}
         </Navbar.Collapse>
       </Container>
     </Navbar>
-
+  
+  
+   
   )
 }
 

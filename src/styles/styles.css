@@ -3,19 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-.navb{
-    background-color: rgb(141, 55, 2);
-    display: flex;
-    justify-content: space-around;
+.item{
+    display:flex;
+    flex-direction: column;
     align-items: center;
     
+    width: 220px;
+    height: 305px;
+    border-style: inset inset;
+    background-color: aqua;
 }
-.boton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: azure;
-    height: 75px;
-    width: 150px;
-    border-radius: 30px;
+.itemImg{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: fit-content;
+}
+.itemImg-img{
+    width: 90%;
+    height: auto;
 }
