@@ -3,17 +3,17 @@ import Item from './Item'
 
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({callBack}) => {
   return (
     <div className='list-container'>
         <div>
             OFERTAS DE LA SEMANA
         </div>
         <div>
-            <Item></Item>
+            <Item callBack={callBack}></Item>
         </div>
     </div>
   )
 }
 
-export default ItemListContainer
+export default ItemListContainer;
