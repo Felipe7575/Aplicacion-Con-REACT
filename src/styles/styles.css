@@ -5,11 +5,10 @@
 }
 .item{
     display:flex;
+    width: 15%;
+    
     flex-direction: column;
     align-items: center;
-    
-    width: 220px;
-    height: 305px;
     border-style: inset inset;
     
 }
@@ -17,9 +16,13 @@
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+    aspect-ratio: 1/1;
     height: fit-content;
 }
 .itemImg-img{
     width: 90%;
     height: auto;
+}
+.item-list{
+    display: flex;
 }
