@@ -1,9 +1,8 @@
 import React from 'react'
-import IMG from '../assets/img/filamento-gris.jpg'
 import ItemCount from './ItemCount'
 
 
-const Item = ({callBack, id, name, description,stock,image}) => {
+const Item = ({callBack, id,stock, name,image}) => {
   return (
     <div className='item'>
         <div>
@@ -13,8 +12,8 @@ const Item = ({callBack, id, name, description,stock,image}) => {
             <img  className="itemImg-img" src={image} alt="Imagen del Producto" />
         </div>
         <div>
-          <p className="item-description">{description}</p>
-          <p>Stock: {stock}</p> 
+          <p className="item-description">{}</p>
+          <p>Stock: {}</p> 
           <ItemCount stock={stock} initial={0} callBack={callBack}></ItemCount>
         </div>
     </div>

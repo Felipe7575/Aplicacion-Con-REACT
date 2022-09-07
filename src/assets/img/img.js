@@ -5,5 +5,5 @@ import FilRojo from "../img/filamento-rojo.jpg";
 export default {
     "1": FilGris,
     "2": FilAzul,
-    "5": FilRojo
+    "3": FilRojo
 }

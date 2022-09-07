@@ -5,8 +5,8 @@
 }
 .item{
     display:flex;
-    width: 15%;
-    
+    width: 20%;
+    aspect-ratio: 1/1;
     flex-direction: column;
     align-items: center;
     border-style: inset inset;
@@ -20,9 +20,32 @@
     height: fit-content;
 }
 .itemImg-img{
-    width: 90%;
+    width: 70%;
     height: auto;
 }
 .item-list{
+    width: 100vw;
     display: flex;
+    flex-wrap: wrap;
+
 }
+
+.containerItemDetails{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; 
+}
+.itemDetails{
+    width: 30vw;
+    border-style: inset inset;
+}	
+.carouselImgDetails{
+    width: 30vw;
+    
+}	
+
+
+

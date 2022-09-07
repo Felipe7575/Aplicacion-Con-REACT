@@ -20,3 +20,6 @@ export const getProductos = () => {
     return task;
 };
 
+export const getProductos2 = () => {
+  return fetch('https://api.mercadolibre.com/sites/MLA/search?q=filamento nano&limit=3').then(response => response.json())
+};
