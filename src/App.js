@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CarritoIcon from "./components/CarritoIcon";
 import ItemListContainer from "./components/ItemListContainer";
 import { useState } from "react";
-import ItemDetails from "./components/ItemDetails";
+import ItemDetailsContainer from "./components/ItemDetailsContainer";
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         </NavBar>
         <ItemListContainer callBack={onAdd}></ItemListContainer>
 
-        <ItemDetails callBack={onAdd}> </ItemDetails>
+        <ItemDetailsContainer callBack={onAdd}> </ItemDetailsContainer>
     </div>
   );
 }

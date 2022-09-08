@@ -2,9 +2,20 @@ import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import IMG from '../assets/img/img'
 import ItemCount from './ItemCount';
+class articulo {
+  constructor(id,name,description,stock) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.stock = stock;
+  }
 
-const ItemDetails = ({callBack}) => {
+}
+
+
+const ItemDetails = ({callBack ,id, name, description, stock, children}) => {
   return (
+
     <div className='containerItemDetails'>
         <Carousel variant="dark" className="d-block carouselImgDetails">
           <Carousel.Item>
@@ -19,20 +30,11 @@ const ItemDetails = ({callBack}) => {
         </Carousel>
         <div className="d-block itemDetails" >
             <p className='NombreItem'>
-              Filamento 3d 1,75 mm PLA 1kg
+              {name}
             </p>
-            <p className='StockItem'> Stock 2 </p>
+            <p className='StockItem'> Stock {stock}</p>
             <p className='PrecioItem'> $ 1000 </p>
-            <p className='DescripcionItem'> Descripcion: uevo XPLA 850
-              
-                Mayor resistencia al impacto y mayor resistencia al calor
-
-                Este nuevo biopolímero mantiene las propiedades de impresión de un PLA común, mejorando su calidad post impresión teniendo así mayor resistencia al impacto que un ABS y 7 veces más que un PLA común, resistiendo temperaturas de hasta 85°C
-
-                Temperatura de impresión:
-                Pico: 190-230°C
-                Cama: 50-70°C
-                Temperatura de recocción: 80-130°C</p>
+            <p className='DescripcionItem'> {children}</p>
             <ItemCount stock={2} initial={0} callBack={callBack}></ItemCount>
         </div>
             

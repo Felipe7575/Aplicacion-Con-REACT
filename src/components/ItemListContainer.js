@@ -13,6 +13,7 @@ const ItemListContainer = ({callBack}) => {
         setArt(res.results);
       });
     },[]);
+
   return (
     <div className='list-container'>
         <div>
