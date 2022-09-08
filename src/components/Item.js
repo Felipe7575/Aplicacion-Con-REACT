@@ -2,7 +2,7 @@ import React from 'react'
 import ItemCount from './ItemCount'
 
 
-const Item = ({callBack, id,stock, name,image}) => {
+const Item = ({callBack, id,stock, name,image, precio}) => {
   return (
     <div className='item'>
         <div>
@@ -13,7 +13,8 @@ const Item = ({callBack, id,stock, name,image}) => {
         </div>
         <div>
           <p className="item-description">{}</p>
-          <p>Stock: {}</p> 
+          <p className="item-price">${precio}</p>
+          <p>Stock: {stock}</p> 
           <ItemCount stock={stock} initial={0} callBack={callBack}></ItemCount>
         </div>
     </div>

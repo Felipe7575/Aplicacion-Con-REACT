@@ -23,7 +23,7 @@ const ItemListContainer = ({callBack}) => {
               
               art.map((articulo) => {
                 console.log(articulo);
-                  return <Item key={articulo.id} callBack={callBack} id={articulo.id} name={articulo.title} stock={articulo.installments.quantity}  image={articulo.thumbnail}> </Item>
+                  return <Item key={articulo.id} callBack={callBack} id={articulo.id} name={articulo.title} stock={articulo.available_quantity} precio={articulo.price} image={imgJs[articulo.id] }> </Item>
               })
                 
             }

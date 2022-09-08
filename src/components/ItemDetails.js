@@ -8,13 +8,13 @@ const ItemDetails = ({callBack}) => {
     <div className='containerItemDetails'>
         <Carousel variant="dark" className="d-block carouselImgDetails">
           <Carousel.Item>
-            <img className="d-block w-100" src={IMG[1]} alt="Second slide"/>
+            <img className="d-block w-100" src={IMG["MLA841844723"]} alt="Second slide"/>
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={IMG[2]} alt="Second slide"/>      
+            <img className="d-block w-100" src={IMG["MLA841844723"]} alt="Second slide"/>      
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src={IMG[3]} alt="Second slide"/> 
+            <img className="d-block w-100" src={IMG["MLA841844723"]} alt="Second slide"/> 
           </Carousel.Item> 
         </Carousel>
         <div className="d-block itemDetails" >
