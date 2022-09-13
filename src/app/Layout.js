@@ -7,7 +7,7 @@ import CarritoIcon from '../components/CarritoIcon';
  const Layout = () => {
   
   return (
-    <div>
+    <div className="container-general">
         <NavBar>
             <CarritoIcon CANT={1}/>
         </NavBar>

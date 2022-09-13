@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Productos = () => {
   return (
-    <div>
+    <div className='item-list-container'>
         <div>
-            Catalogo de productos
+            <b>Catalogo de productos</b>
         </div>  
       <ItemListContainer></ItemListContainer>
     </div>

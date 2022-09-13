@@ -2,23 +2,23 @@ import React from 'react'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({stock,initial=0}) => {
-  const [CANT, setCant] = useState(initial);
+const ItemCount = ({stock,initial=0,onAdd}) => {
+  const [cant, setCant] = useState(initial);
   return (
-    <>
+    <div className='container-count'>
         <div>
             <Button variant="outline-success" 
                                 onClick={()=>{
-                                    if(CANT>0)
-                                    setCant(CANT-1);
+                                    if(cant>0)
+                                    setCant(cant-1);
                                 }
                                 }
                             >-</Button> 
-                {  CANT  }
+                {  cant  }
             <Button variant="outline-success" 
                             onClick={()=>{
-                                if(CANT<stock)
-                                    setCant(CANT+1);
+                                if(cant<stock)
+                                    setCant(cant+1);
                                 }
                             }
                         >+</Button> 
@@ -26,12 +26,13 @@ const ItemCount = ({stock,initial=0}) => {
         
         <Button variant="outline-success"
                         onClick={()=>{
-                                
+                                onAdd(cant);
                                 setCant(0);
+                                
                             }
                          }
-                    >AGREGAR</Button>
-    </>
+                    >AGREGAR AL CARRITO </Button>
+    </div>
   )
 }
 export default ItemCount;

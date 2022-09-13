@@ -5,9 +5,9 @@ import ItemListContainer from "../components/ItemListContainer";
 
 const Home = () => {
     return (
-      <div >
+      <div className='item-list-container'>
           <div>
-            OFERTAS DE LA SEMANA
+            <b>OFERTAS DE LA SEMANA</b>
           </div>          
           <ItemListContainer></ItemListContainer>       
       </div>
