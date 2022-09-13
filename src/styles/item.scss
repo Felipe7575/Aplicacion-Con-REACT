@@ -1,0 +1,38 @@
+.item{
+    display:flex;
+    width: 20%;
+    aspect-ratio: 1/1;
+    flex-direction: column;
+    align-items: center;
+    border-style: inset inset;
+    
+}
+.itemImg{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    aspect-ratio: 1/1;
+    height: fit-content;
+}
+.itemImg-img{
+    width: 70%;
+    height: auto;
+}
+.item-list{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.buttonAgregar{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}

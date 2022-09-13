@@ -1,5 +1,8 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
+
 
 
 const Item = ({callBack, id,stock, name,image, precio}) => {
@@ -15,7 +18,8 @@ const Item = ({callBack, id,stock, name,image, precio}) => {
           <p className="item-description">{}</p>
           <p className="item-price">${precio}</p>
           <p>Stock: {stock}</p> 
-          <ItemCount stock={stock} initial={0} callBack={callBack}></ItemCount>
+          <ItemCount stock={stock} initial={0}></ItemCount>
+          <Button className="buttonAgregar"><Link  className="buttonAgregar" to = {`/itemDetailsContainer/${id}`}> DETALLES </Link></Button>{' '}
         </div>
     </div>
   )

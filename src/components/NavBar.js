@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,16 +16,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = ({CANT , children}) => {
   return (
-    // <div className='navb' style={{height:150 ,width: "100vw", backgroundColor: "#FD876"}}>
-
-    //     <img src={LOGO} style={{height: 100, width: 100}} alt="LOGO DE 3D RAMOS"/>
-    //     <a href="./index.html" className='boton'>  INICIO </a>
-    //     <a href="./index.html" className='boton'> PRODUCTOS </a>
-    //     <a href="./index.html" className='boton'> NOSOTROS </a>
-    // </div>
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbarDiv" bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#"><img src={LOGO} style={{height: 50, width: 50}} alt="LOGO DE 3D RAMOS" ></img> TODO 3D RAMOS </Navbar.Brand>
+        <Link to="/" className='navBarBrand'> <img src={LOGO} style={{height: 50, width: 50}} alt="LOGO DE 3D RAMOS" ></img> TODO 3D RAMOS  </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" >
           <Nav
@@ -32,18 +26,19 @@ const NavBar = ({CANT , children}) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">INICIO</Nav.Link>
-            <NavDropdown title="PRODUCTOS" id="navbarScrollingDropdown">
+            <Link className="navbarLink" to="/">INICIO</Link>
+            <NavDropdown className="navbarDropDown"  title="PRODUCTOS" id="navbarScrollingDropdown">
+            
+               <Link className="navbarDropDown-item" to="/productos/1">Filamento PLA</Link> 
+              <Link className="navbarDropDown-item" to="/productos/2">Filamento ABS</Link> 
+              <Link className="navbarDropDown-item" to="/productos/3">Impresoras 3D</Link>  
 
-              <NavDropdown.Item href="#action5">Impresoras</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Filamentos</NavDropdown.Item>
+               <NavDropdown.Divider />
+              <Link className="navbarDropDown-item" to="/productos/0">CATALOGO</Link> 
 
-              <NavDropdown.Divider />
+            </NavDropdown> 
 
-              <NavDropdown.Item href="#action3">CATALOGO</NavDropdown.Item>
-
-            </NavDropdown>
-            <Nav.Link href="#action1">CONTACTO</Nav.Link>
+            <Link className="navbarLink" to="/contact">CONTACTO</Link>   
           </Nav>
           <Form className="d-flex">
             <Form.Control

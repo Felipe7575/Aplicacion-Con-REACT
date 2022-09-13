@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({stock,initial=0, callBack}) => {
+const ItemCount = ({stock,initial=0}) => {
   const [CANT, setCant] = useState(initial);
   return (
     <>
@@ -26,7 +26,7 @@ const ItemCount = ({stock,initial=0, callBack}) => {
         
         <Button variant="outline-success"
                         onClick={()=>{
-                                callBack(CANT);
+                                
                                 setCant(0);
                             }
                          }

@@ -1,30 +1,34 @@
 import React, { useEffect } from 'react'
 import Item from './Item'
 import { useState } from "react";
-import {getProductos, getProductos2} from "../api";
-import imgJs from "../assets/img/img.js";
+import {getProductos} from "../api";
+import {useParams} from 'react-router-dom';
+import { getDetails } from '../api';
 
 
-const ItemListContainer = ({callBack}) => {
+const ItemListContainer = () => {
   const [art, setArt] = useState([]);
-  let i=0;
+  const {catId=0} = useParams();
     useEffect(() =>{
-      getProductos2().then((res) => {
-        setArt(res.results);
-      });
-    },[]);
+      if(catId != null){
+        getProductos(catId).then((res=[]) => {     
+          setArt(res);
+          console.log("res");
+          console.log(res);
+        });
+      } 
+    },[catId]);
+    
+
 
   return (
     <div className='list-container'>
-        <div>
-            OFERTAS DE LA SEMANA
-        </div>
+        
         <div className="item-list"> 
             {
               
               art.map((articulo) => {
-                console.log(articulo);
-                  return <Item key={articulo.id} callBack={callBack} id={articulo.id} name={articulo.title} stock={articulo.available_quantity} precio={articulo.price} image={imgJs[articulo.id] }> </Item>
+                  return <Item key={articulo.id}  id={articulo.id} name={articulo.name} stock={articulo.stock} precio={articulo.precio} image={articulo.img[0] }> </Item>
               })
                 
             }

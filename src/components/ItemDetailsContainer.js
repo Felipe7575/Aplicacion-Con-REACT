@@ -2,20 +2,27 @@ import React, { useEffect } from 'react'
 import { useState } from "react";
 import ItemDetails from './ItemDetails';
 import { getDetails } from '../api';
+import {useParams} from 'react-router-dom';
 
 
-const ItemDetailsContainer = ({onAdd}) => {
+const ItemDetailsContainer = () => {
+    const {artId} = useParams();
+    
     const [art, setART] = useState(0);
-    useEffect(() =>{
-        getDetails().then((res) => {
-            setART(res[0]);
-            console.log(res[0]);
+
+    useEffect(() => {   
+        getDetails(artId).then((res) => {     
+            setART(res);
         });
+    }, []);
+
+    useEffect(() =>{
+       
     },[]);
     
     return (  
     <div>
-        <ItemDetails callBack={onAdd} id={art.id} name={art.name} description={art.description} stock={art.stock} > 
+        <ItemDetails  id={art.id} name={art.name} description={art.description} stock={art.stock} img={art.img} precio={art.precio} > 
                     {art.largeDescript}
               </ItemDetails>
     </div>

@@ -5,6 +5,7 @@ import CarritoIcon from '../components/CarritoIcon';
 
 
  const Layout = () => {
+  
   return (
     <div>
         <NavBar>
