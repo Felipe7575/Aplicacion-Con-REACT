@@ -1,35 +1,33 @@
 .item{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    padding: 10px;
-    border-radius: 5px;
-    width: 330px;
-    aspect-ratio: 1/1;
-     
     display:flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: white;
 
-    &:hover {
-        padding: 3px;
-        transition: 0.2s;
-    }
-}
-.itemImg{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+
+    width: 330px;
+    height: 500px;
     
+    
+}
+.itemImg{ 
     width: 90%;
-    aspect-ratio: 1/1;
     height: fit-content;
     display: flex;
     justify-content: center;
+    &:hover {
+        padding: 10px;
+        transition: 0.2s;
+    }
 }
 .itemImg-img{
-    
-    width: 70%;
-    height: auto;
-    aspect-ratio: 1/1;
+    width: 200px;
+    height: 250px;
 }
 
 .buttonAgregar{
@@ -45,6 +43,9 @@
 }
 
 .item-data{
+    height: 235px;
+    justify-content: end;
+    
     display: flex;
     flex-direction: column;
     align-items:flex-start;
@@ -66,5 +67,8 @@
 .item-title{
     font-size: 20px;
     font-weight: 600;
+    &:hover {
+        font-weight: 700;
+    }
 }
 

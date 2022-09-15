@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Item from './Item'
+import Item from '../components/Item'
 import { useState } from "react";
 import {getProductos} from "../api";
 import {useParams} from 'react-router-dom';
@@ -13,8 +13,6 @@ const ItemListContainer = () => {
       if(catId != null){
         getProductos(catId).then((res=[]) => {     
           setArt(res);
-          console.log("res");
-          console.log(res);
         });
       } 
     },[catId]);

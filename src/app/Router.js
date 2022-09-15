@@ -3,9 +3,9 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import Layout from '../app/Layout';
-import ItemDetailsContainer from '../components/ItemDetailsContainer';
-import { useState } from "react";
-import { Productos } from '../pages/Productos';
+import Carrito  from '../pages/Carrito';
+import ItemDetailsContainer from '../pages/ItemDetailsContainer';
+import ItemListContainer from '../pages/ItemListContainer';
 
 const Router = () => {
     
@@ -16,7 +16,8 @@ const Router = () => {
                 <Route index element={<Home/>}/>
                 <Route path="/contact/" element={<Contact/>}/>  
                 <Route path="/itemDetailsContainer/:artId" element={<ItemDetailsContainer/>}/>
-                <Route path="/productos/:catId" element={<Productos/>}/>"  
+                <Route path="/productos/:catId" element={<ItemListContainer/>}/>"  
+                <Route path="/carrito" element={<Carrito/>}/>
                 <Route path="*" element={<div>404</div> } />
             </Route>
         </Routes>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from "react";
-import ItemDetails from './ItemDetails';
+import ItemDetails from '../components/ItemDetails';
 import { getDetails } from '../api';
 import {useParams} from 'react-router-dom';
 
