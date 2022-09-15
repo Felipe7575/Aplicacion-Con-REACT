@@ -28,9 +28,7 @@ const Item = ({callBack, id,stock, name,image, precio}) => {
               <p className="item-price"><b>$</b>{precio}</p>
               <p className="item-stock">Stock: {stock}</p> 
             </div>
-            <div>
-              <Button className=""><Link  className="buttonAgregar" to = {`/carrito`}> COMPRAR </Link></Button>
-            </div>
+            
             
         </div>
             
