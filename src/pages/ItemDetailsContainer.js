@@ -28,7 +28,7 @@ const ItemDetailsContainer = () => {
         },[]);
 
         return ( 
- 
+            <div className='background'>
                 <div className='containerItemDetails'>
                     <div>
                     <Carousel variant="dark" className="d-block carouselImgDetails">
@@ -50,7 +50,7 @@ const ItemDetailsContainer = () => {
                     </div>
                     
                 </div>
-  
+            </div>   
         )
     
 }
