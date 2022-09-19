@@ -155,7 +155,7 @@ const articulos = [
       setTimeout(() => {
             const arti = articulos.find((art) =>{if(parseInt(artId)==art.id){return art;}});	
             resolve(arti);
-          }, 1000);       
+          }, 500);       
         });
   return task;
 };
@@ -171,7 +171,7 @@ export const getProductos = (catId) => {
                 if(parseInt(catId)==art.catId){ return art;}}); 
             }	
         resolve(resultado);
-        }, 1000);
+        }, 500);
         });
   return task;
 };

@@ -25,7 +25,7 @@ const NavBar = ({CANT , children}) => {
             <Link className="navbarLink" to="/">INICIO</Link>
             <NavDropdown className="navbarDropDown"  title="PRODUCTOS" id="navbarScrollingDropdown">
             
-               <Link className="navbarDropDown-item" to="/productos/1">Filamento PLA</Link> 
+              <Link className="navbarDropDown-item" to="/productos/1">Filamento PLA</Link> 
               <Link className="navbarDropDown-item" to="/productos/2">Filamento ABS</Link> 
               <Link className="navbarDropDown-item" to="/productos/3">Impresoras 3D</Link>  
 
