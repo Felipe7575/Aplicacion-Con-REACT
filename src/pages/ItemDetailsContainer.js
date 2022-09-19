@@ -1,42 +1,38 @@
-import React, { useEffect } from 'react'
-import { useState } from "react";
-import { getDetails } from '../api';
+import {React,  useEffect , useState} from 'react'
 import {useParams} from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import { Link,  useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import{useContext} from 'react';
+import {AppContext} from '../app/Provider';
+
+import { getDetails } from '../api';
 import ItemCount from '../components/ItemCount';
+
+import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 
-
 const ItemDetailsContainer = () => {
-
-    const navigate = useNavigate();
-    function click(){
-        navigate("/carrito");
-      }
-
-    const [cant, setCant] = useState(false);
     
-    const onAdd = (cant) => {
-        setCant(cant);
-      }
-
+    const{addItem} = useContext(AppContext);
+    const [cant, setCant] = useState(0);
     const {artId} = useParams();
-
     const [art, setART] = useState({});
 
+    const navigate = useNavigate();
+    const click= () => { addItem(art,cant); navigate('/carrito');}
+    const onAdd = (cant) => { setCant(cant);}
+    
     useEffect(() => {   
         getDetails(artId).then((res) => {     
             setART(res);
-        });
-    }, []);
+            });
+        },[]);
 
         return ( 
  
                 <div className='containerItemDetails'>
                     <div>
                     <Carousel variant="dark" className="d-block carouselImgDetails">
-                        {art.img&&art.img.map((imagen,i=0)=>{i++; return(<Carousel.Item key={art.id+":"+i}><img  className="d-block w-100" src={imagen} alt="Second slide"/></Carousel.Item>)})} 
+                        {art.img&&art.img.map((imagen,i=0)=>{i++; return(<Carousel.Item key={art.id+":"+i}><img  className="imgDetail" src={imagen} alt="Second slide"/></Carousel.Item>)})} 
                     </Carousel>
                     </div>
                     <div className="d-block itemDetails" >
@@ -45,10 +41,10 @@ const ItemDetailsContainer = () => {
                         <p className='StockItem'> Stock {art.stock}</p>
                         <p className='PrecioItem'> $ {art.precio} </p>
                         <p className='DescripcionItem'> {art.largeDescript}</p>
-                        {cant==0? (
+                        {cant===0? (
                             <ItemCount stock={art.stock} initial={0} onAdd={onAdd}></ItemCount>
                             ):(
-                            <Button variant="outline-success" className="buttonAgregar"><Link  className="buttonAgregar" to = {`/carrito`}> COMPRAR </Link></Button>
+                            <Button variant="outline-success" className="buttonAgregar" onClick={click}> COMPRAR </Button>
                             )               
                         }
                     </div>

@@ -1,12 +1,10 @@
 import React from 'react'
-import ItemCount from './ItemCount'
-import Button from 'react-bootstrap/Button';
-import { Link,  useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
 
 
-const Item = ({callBack, id,stock, name,image, precio}) => {
+const Item = ({id,stock, name,image, precio}) => {
   
   const navigate = useNavigate();
   function abrirItem(){

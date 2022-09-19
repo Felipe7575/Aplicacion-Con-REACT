@@ -1,0 +1,41 @@
+.carritoList{
+    background-color: rgb(165, 183, 199);
+    font-size: large;
+    font-weight: 500;
+    
+    padding: 1%;
+    width: 100%;
+    img{
+        width: 100%;
+
+    }
+
+    button{
+        height: fit-content;
+        width: fit-content;
+    }
+}
+
+.artCarrito,.carritoTable{
+    
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    align-items: center;
+    padding-top: 2%;
+    background-color: white;
+    border: 1px solid rgba(195, 189, 189, 0.222) ;
+    text-align: center;
+}
+
+.artCarrito{
+    grid-template-columns: 2fr 4fr repeat(4, 1fr);
+}
+
+.carritoTable{
+    
+    grid-template-columns: 6fr  repeat(4, 1fr);
+}
+
