@@ -1,11 +1,13 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 
+
+
 const ItemCarrito = ({cart,remove}) => {
     const click = (id) => {
         remove(id);
     }
-    let sum = 0;
+
     return (
         <div>
         {cart.map((item) => {

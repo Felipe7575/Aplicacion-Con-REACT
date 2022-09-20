@@ -1,4 +1,3 @@
-
 import LOGO from '../assets/img/LOGO.png'
 
 import Button from 'react-bootstrap/Button';
@@ -9,8 +8,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 
+import{useContext, useEffect} from 'react';
+import {AppContext} from '../app/Provider';
+import { useState } from 'react';
 
-const NavBar = ({CANT , children}) => {
+import CarritoIcon from './CarritoIcon';
+
+
+const NavBar = ({CANT}) => {
+  const [cant,setCant] = useState(0);
+  const{cart} = useContext(AppContext);
+ 
+
+  useEffect(() => {
+     setCant(cart.length);
+  }, [cart]);
+
   return (
     <Navbar className="navbarDiv" bg="light" expand="lg">
       <Container fluid>
@@ -45,7 +58,7 @@ const NavBar = ({CANT , children}) => {
             />
             <Button variant="outline-success">BUSCAR</Button>
           </Form>
-          {children}
+          <CarritoIcon CANT={cant}></CarritoIcon>
         </Navbar.Collapse>
       </Container>
     </Navbar>

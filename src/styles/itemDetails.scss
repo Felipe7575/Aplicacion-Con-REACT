@@ -9,6 +9,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    .cartel{
+        position:absolute;
+        margin: 1%;
+        right: 4%;
+        transform: scale(1.2);
+    }
 }
 
 .itemDetails{
@@ -17,12 +23,26 @@
     border-radius: 2%;
     padding: 2%;
     margin-left:2%;
+
+    .priceDiv{
+        .item-priceOferta{
+            text-decoration: line-through;
+            color: red;
+            padding: 0px;
+            margin: 0px;
+        }
+        .item-price{
+            font-weight: 600;
+            padding: 0px;
+            margin: 0px;
+        }
+    }
     
 }	
 
 .carouselImgDetails{
-    width: 400px;
-    height: 400px;
+    width: 30vw;
+    aspect-ratio: 1;
 
     background-color: white;
     overflow: hidden;
@@ -40,6 +60,8 @@
     }
 }
 
+
+
  @media (max-width: 800px){
     .containerItemDetails{
         flex-direction:column;
@@ -50,7 +72,7 @@
 
     .carouselImgDetails{
        
-        width: 90%;
+        width: 50vw;
         aspect-ratio: 1/1;
         margin-bottom: 2%;
     

@@ -2,8 +2,11 @@ import { createContext, useState } from "react";
 
 const Provider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    let carrito = [];
     const addItem = (art, cantidad) => {
-        existeItem(art.id) ? cart.find((item) => item.art.id === art.id).cantidad += cantidad : cart.push({art, cantidad});
+        
+        existeItem(art.id) ? cart.find((item) => item.art.id === art.id).cantidad += cantidad :carrito.push({art,cantidad});
+        setCart([...cart,...carrito]);
      };
     const existeItem = (id) => {
         return  (cart.find((item) => item.art.id === id) ? true : false);

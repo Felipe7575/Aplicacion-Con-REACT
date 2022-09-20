@@ -9,11 +9,8 @@ import Provider from './Provider';
 
   return (
     <div className="container-general">
-        <NavBar>
-            <CarritoIcon/>
-        </NavBar>
         <Provider>
-          
+          <NavBar> </NavBar>
           <Outlet/>
         </Provider>
     </div>

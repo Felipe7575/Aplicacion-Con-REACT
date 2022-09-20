@@ -10,6 +10,9 @@ import ItemCount from '../components/ItemCount';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 
+import logoSinStock from '../assets/img/sin_stock.png';
+import logoOferta from '../assets/img/oferta.png';
+
 const ItemDetailsContainer = () => {
     
     const{addItem} = useContext(AppContext);
@@ -18,7 +21,9 @@ const ItemDetailsContainer = () => {
     const [art, setART] = useState({});
 
     const navigate = useNavigate();
+
     const click= () => { addItem(art,cant); navigate('/carrito');}
+    
     const onAdd = (cant) => { setCant(cant);}
     
     useEffect(() => {   
@@ -31,15 +36,31 @@ const ItemDetailsContainer = () => {
             <div className='background'>
                 <div className='containerItemDetails'>
                     <div>
-                    <Carousel variant="dark" className="d-block carouselImgDetails">
-                        {art.img&&art.img.map((imagen,i=0)=>{i++; return(<Carousel.Item key={art.id+":"+i}><img  className="imgDetail" src={imagen} alt="Second slide"/></Carousel.Item>)})} 
-                    </Carousel>
+                        <Carousel variant="dark" className="d-block carouselImgDetails">
+                            {art.img&&art.img.map((imagen,i=0)=>{i++; return(<Carousel.Item key={art.id+":"+i}><img  className="imgDetail" src={imagen} alt="Second slide"/></Carousel.Item>)})} 
+                        </Carousel>
                     </div>
                     <div className="d-block itemDetails" >
+                        <div className="cartel">
+                            {(art.precioOferta>0 && art.stock>0) &&
+                                    <img className="" src={logoOferta} alt="Oferta" />
+
+                                }
+                            {art.stock === 0 &&           
+                                    <img className="" src={logoSinStock} alt="Sin Stock" />              
+                                }
+                        </div>
                         <p className='item-title'>{art.name}</p>
                         <p className='item-description'>{art.description}</p>
                         <p className='StockItem'> Stock {art.stock}</p>
-                        <p className='PrecioItem'> $ {art.precio} </p>
+
+                        {(art.precioOferta>0 && art.stock>0)?
+                            <div className='priceDiv'>
+                            <p className="item-price"><b>$</b>{art.precioOferta}</p>
+                            <p className="item-priceOferta"><b>$</b>{art.precio}</p>
+                            </div>  :
+                            <p className="item-price"><b>$</b>{art.precio}</p>
+                        }
                         <p className='DescripcionItem'> {art.largeDescript}</p>
                         {cant===0? (
                             <ItemCount stock={art.stock} initial={0} onAdd={onAdd}></ItemCount>

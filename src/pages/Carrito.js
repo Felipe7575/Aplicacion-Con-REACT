@@ -17,7 +17,12 @@ const Carrito = () => {
   useEffect(() => {
     let sum = 0;
     cart.forEach((item) => {
-      sum += item.art.precio * item.cantidad;
+      if(item.art.precioOferta>0){
+        sum += item.art.precioOferta*item.cantidad;
+      }
+      else{
+        sum += item.art.precio * item.cantidad;
+      }
     });
     setTotal(sum);
   }, [cart]);
@@ -34,7 +39,7 @@ const Carrito = () => {
               <p>Precio unitario</p>
               <p>Precio</p>
             </div>
-
+          
           <ItemCarrito cart={cart} remove={removeItem} ></ItemCarrito>
 
           <div className='carritoTable'>

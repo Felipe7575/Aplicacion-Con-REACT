@@ -14,12 +14,6 @@ class articulo {
     }
   
   }
-  
-export const getProductos2 = () => {
-  return fetch('https://api.mercadolibre.com/sites/MLA/search?seller_id=481950707&q=filamento pla 1kg Makerparts &limit=10').then(response => response.json())
-};
-
-
 
 const articulos = [
   new articulo(70648,
