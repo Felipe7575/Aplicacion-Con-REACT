@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-const ItemCarrito = ({cart,remove}) => {
+const ListCarrito = ({cart,remove}) => {
     const click = (id) => {
         remove(id);
     }
@@ -33,4 +33,4 @@ const ItemCarrito = ({cart,remove}) => {
 
 }
 
-export default ItemCarrito;
+export default ListCarrito;

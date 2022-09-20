@@ -1,8 +1,9 @@
 import{React,useContext,useState,useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
-import ItemCarrito from '../components/ItemCarrito';
+import ListCarrito from '../components/ListCarrito';
 import { AppContext } from '../app/Provider';
 import { useNavigate } from 'react-router-dom';
+import carritoVacio from '../assets/img/carrito-de-compras.png';
 
 
 
@@ -12,8 +13,6 @@ const Carrito = () => {
   
   const{cart,removeItem,clear} = useContext(AppContext);
   const [total, setTotal] = useState(0);
-
-
   useEffect(() => {
     let sum = 0;
     cart.forEach((item) => {
@@ -29,33 +28,63 @@ const Carrito = () => {
 
     const navigate = useNavigate();
     const click= () => {navigate('/productos/0');}
-  
-  return (
 
-    <div className='carritoList'>
-            <div className='carritoTable'>
-              <p>Producto</p>
-              <p>Cantidad</p>
-              <p>Precio unitario</p>
-              <p>Precio</p>
-            </div>
-          
-          <ItemCarrito cart={cart} remove={removeItem} ></ItemCarrito>
+    //===============================================================================
+    //Lista de carrito
+        const carritoList = () => {
+          return(
+            <div className='carritoList'>
+                  <div className='carritoTable'>
+                    <p>Producto</p>
+                    <p>Cantidad</p>
+                    <p>Precio unitario</p>
+                    <p>Precio</p>
+                  </div>
+                
+                <ListCarrito cart={cart} remove={removeItem} ></ListCarrito>
 
-          <div className='carritoTable'>
-              <p>Total</p>
-              <p>{total}</p>
+                <div className='carritoTable'>
+                    <p>Total</p>
+                    <p>{total}</p>
+                    
+                </div>
+
+              <div className='botoneraCarrito'>
+                  <Button onClick={click}> SEGUIR COMPRANDO </Button>
+                  <Button onClick={clear}> BORRAR CARRITO </Button>
+                  <Button > FINALIZAR COMPRA </Button>
+              </div>  
               
-          </div>
+            </div>
+          );
+        };
+    //===============================================================================
 
-        <div className='botoneraCarrito'>
-            <Button onClick={click}> SEGUIR COMPRANDO </Button>
-            <Button onClick={clear}> BORRAR CARRITO </Button>
-            <Button > FINALIZAR COMPRA </Button>
-        </div>  
-        
+ 
+  if(cart.length>0){
+    return(
+      carritoList()
+    )
+    
+  }
+  else{
+  return (
+    <div className='carritoVacio '>
+      <div>
+        <p>Su carrito de compras está vacío.</p>
+        <p>¡Comience explorando nuestra tienda de productos!</p>
+        <Button onClick={click}> SEGUIR COMPRANDO </Button>
+      </div>
+      <img src={carritoVacio}></img>
+
     </div>
-  )
+  );}
 }
 
+
+
+
 export default Carrito;
+
+
+
