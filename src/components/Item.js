@@ -1,10 +1,12 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom';
+import logoOferta from '../assets/img/oferta.png';
+import logoSinStock from '../assets/img/sin_stock.png';
 
 
 
 
-const Item = ({id,stock, name,image, precio}) => {
+const Item = ({id,stock, name,image, precio, precioOferta}) => {
   
   const navigate = useNavigate();
   function abrirItem(){
@@ -17,6 +19,17 @@ const Item = ({id,stock, name,image, precio}) => {
         <div className='itemImg' onClick={abrirItem}>
             <img className="itemImg-img" src={image} alt="Imagen del Producto" />
         </div>
+
+        <div className="cartel">
+            {(precioOferta>0 && stock>0) &&
+                    <img className="" src={logoOferta} alt="Oferta" />
+
+                }
+            {stock === 0 &&           
+                    <img className="" src={logoSinStock} alt="Sin Stock" />              
+                }
+        </div>
+
         <div className='item-data'>
             <div>
                 <p className='item-title' onClick={abrirItem}>{name}</p>

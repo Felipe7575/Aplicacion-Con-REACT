@@ -26,7 +26,7 @@ const ItemListContainer = () => {
             {
               
               art.map((articulo) => {
-                  return <Item key={articulo.id}  id={articulo.id} name={articulo.name} stock={articulo.stock} precio={articulo.precio} image={articulo.img[0] }> </Item>
+                  return <Item key={articulo.id}  id={articulo.id} name={articulo.name} stock={articulo.stock} precio={articulo.precio} image={articulo.img[0]} precioOferta={articulo.precioOferta} > </Item>
               })
         
             }
