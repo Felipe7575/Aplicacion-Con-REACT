@@ -31,12 +31,21 @@ const Item = ({id,stock, name,image, precio, precioOferta}) => {
         </div>
 
         <div className='item-data'>
+
             <div>
                 <p className='item-title' onClick={abrirItem}>{name}</p>
             </div>
-            <div className='precioStock'>
-              <p className="item-description">{}</p>
-              <p className="item-price"><b>$</b>{precio}</p>
+            <p className="item-description">{}</p>
+
+            <div className='precioStock'>      
+              {(precioOferta>0 && stock>0)?
+                <div className='priceDiv'>
+                  <p className="item-price"><b>$</b>{precioOferta}</p>
+                  <p className="item-priceOferta"><b>$</b>{precio}</p>
+                </div>  :
+                <p className="item-price"><b>$</b>{precio}</p>
+              }
+              
               <p className="item-stock">Stock: {stock}</p> 
             </div>
             

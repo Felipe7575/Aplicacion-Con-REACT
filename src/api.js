@@ -30,7 +30,7 @@ const articulos = [
               "Nuevo XPLA 850 Mayor resistencia al impacto y mayor resistencia al calor Este nuevo biopolímero mantiene las propiedades de impresión de un PLA común, mejorando su calidad post impresión teniendo así mayor resistencia al impacto que un ABS y 7 veces más que un PLA común, resistiendo temperaturas de hasta 85°C",
               img[70648],
               3550,
-              4
+              3000
       ),
   new articulo(70649,
               "xPLA850MKP-1.Cobre",
@@ -40,7 +40,7 @@ const articulos = [
               "Nuevo XPLA 850 Mayor resistencia al impacto y mayor resistencia al calor Este nuevo biopolímero mantiene las propiedades de impresión de un PLA común, mejorando su calidad post impresión teniendo así mayor resistencia al impacto que un ABS y 7 veces más que un PLA común, resistiendo temperaturas de hasta 85°C", 
               img[70649],
               3550,
-              2
+              3100
       ),
   new articulo(70650,
               "xPLA850MKP-1.75Gris",
@@ -104,7 +104,7 @@ const articulos = [
               "Gran tenacidad, ideal para piezas de esfuerzos mecánicos, posible uso a temperaturas de hasta -40° C y en calor hasta 90° C. Las piezas impresas en ABS pueden ser lijadas, cortadas y pintadas. Es soluble en acetona para mejor acabado. Temperatura de Pico: 180° – 230° Temperatura de Cama: 50° – 110° Densidad g/cc 1.05 g/cm³ ASTM D792 Índice de fluidez 11,7 g/10 min ASTM D1238 230°C/3.8 kgf Mecánicas Resistencia a la tracción 35 Mpa ASTM 638 Type I, 5 mm/min Elongación a la rotura 18% ASTM 638 Type I, 5 mm/min Módulo elástico en tracción 2480 Mpa ASTM 638 Dureza, Rockwell R 113 ASTM D 785 Resistencia a la flexión 79 Mpa ASTM D 790 Resistencia al impacto 240 J/m ASTM D 256 izod con entalla, @23°C Térmicas Temperatura de deflexión bajo carga 82°C ASTM D 648 1.82 MPa, 3.2mm, unannealed makerparts.net - Made in Argentina",
               img[70656],
               4250,
-              10
+              100
       ),
   new articulo(70657,
               "3DPrinter-ImpMakerParts4KResina",
