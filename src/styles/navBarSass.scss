@@ -5,7 +5,7 @@
   .navBarBrand{
     display: flex;
     align-items:center;
-    font-size: 23px;
+    font-size: 25px;
     font-weight: 700;
     color: rgba(68, 65, 65, 0.767);
     &:hover{
@@ -18,9 +18,17 @@
 }
 
 @media (max-width: 400px){
-  .navBarBrand{
-    font-size: 19;
+  .containerNavBar{
+    .navBarBrand{
+      font-size: 18px;
+    }
+    img{
+      width: 45px;
+      height: 45px;
+    }
   }
+
+  
 
 }
 
