@@ -1,54 +1,20 @@
-
-
-.navBarBrand {
-  color: rgba(0, 0, 0, 0.55);
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  padding-top: 0;
-  padding-right: 0,5rem;
+.containerNavBar{
+  height: 65px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    color: rgba(0, 0, 0, 0.9);
-    text-decoration: none;
+  .navBarBrand{
+    display: flex;
+    align-items:center;
+    font-size: 23px;
+    font-weight: 700;
+    color: rgba(68, 65, 65, 0.767);
+    &:hover{
+      transition: .1s;
+      font-size: 25px;
+      color: rgba(39, 38, 38, 0.767);
+    }
   }
-}	
-.navbarDropDown { 
-  color: rgba(0, 0, 0, 0.55)!important;
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  & :hover {
-    color: rgba(0, 0, 0, 0.9) ;; 
-    text-decoration: none   ;
-  }
+
 }
 
 
-.navbarLink {
-  color: rgba(0, 0, 0, 0.55);
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    color: rgba(0, 0, 0, 0.9);
-    text-decoration: none;
-  }
-}	
-
-.navbarDropDown-item{
-  display: block;
-  text-decoration: none;
-  color: rgba(57, 55, 60, 0.632);
-}

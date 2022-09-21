@@ -52,10 +52,11 @@
 
 .carritoVacio{
     height: 60vh;
-    width: fit-content;
+    width: 60%;
 
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-left:auto ;
     margin-right: auto;
     margin-top: 10%;
@@ -65,8 +66,27 @@
     font-size: 20px;
 
     background-color: white;
+    overflow: hidden;
 
     img{
-        height: 90%;
+        width: 300px;
     }
 }
+
+@media (max-width:800px) {
+    .carritoVacio{
+        width: 90%;
+        img{
+            width: 200px;
+        }
+    }
+    
+}
+@media (max-width:500px) {
+    .carritoVacio{
+        font-size: 15px;
+        img{
+            width: 170px;
+        }
+    }
+  }
