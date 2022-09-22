@@ -1,10 +1,10 @@
-import {React,  useEffect , useState} from 'react'
+import {useEffect , useState} from 'react'
 import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import{useContext} from 'react';
 import {AppContext} from '../app/Provider';
 
-import { getDetails } from '../api';
+
 import ItemCount from '../components/ItemCount';
 
 import Button from 'react-bootstrap/Button';
@@ -12,6 +12,8 @@ import Carousel from 'react-bootstrap/Carousel';
 
 import logoSinStock from '../assets/img/sin_stock.png';
 import logoOferta from '../assets/img/oferta.png';
+
+import {getItemById} from '../app/api';
 
 const ItemDetailsContainer = () => {
     
@@ -22,14 +24,15 @@ const ItemDetailsContainer = () => {
 
     const navigate = useNavigate();
 
-    const click= () => { addItem(art,cant); navigate('/carrito');}
+    const click= () => {navigate('/carrito');}
     
-    const onAdd = (cant) => { setCant(cant);}
+    const onAdd = (cant) => { setCant(cant); addItem(art,cant)}
     
     useEffect(() => {   
-        getDetails(artId).then((res) => {     
+        getItemById("ARTICULOS",artId).then((res) => {
             setART(res);
-            });
+        });
+
         },[]);
 
         return ( 
@@ -65,7 +68,7 @@ const ItemDetailsContainer = () => {
                         {cant===0? (
                             <ItemCount stock={art.stock} initial={0} onAdd={onAdd}></ItemCount>
                             ):(
-                            <Button variant="outline-success" className="buttonAgregar" onClick={click}> COMPRAR </Button>
+                            <Button variant="outline-success" className="buttonAgregar" onClick={click}> FINALIZAR COMPRA </Button>
                             )               
                         }
                     </div>

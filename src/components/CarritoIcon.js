@@ -13,7 +13,7 @@ const CarritoIcon = ({CANT}) => {
 
   return (
     <div className='icon' style={{display:'flex', fontSize:'20px',fontWeight:500,alignItem:'center'}} >
-        <button onClick={click} style={{marginLeft:20 , textDecoration: 'none',border:'none',background:'none'}}><img src={CARRITO} style={{height: 50, width: 50}}></img></button>
+        <button onClick={click} style={{marginLeft:20 , textDecoration: 'none',border:'none',background:'none'}}><img src={CARRITO} style={{height: 50, width: 50}} alt="icono de la pagina"></img></button>
         {CANT>0 && <div className='carritoIconCant'>{CANT}</div>}
     </div>
   )

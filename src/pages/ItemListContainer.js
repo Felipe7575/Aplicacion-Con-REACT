@@ -1,27 +1,29 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Item from '../components/Item'
 import { useState } from "react";
-import {getProductos} from "../api";
-import {useParams} from 'react-router-dom';
 
+import {useParams} from 'react-router-dom';
+import {getItems,getItemsByCondition } from '../app/api';
 
 
 const ItemListContainer = () => {
   const [art, setArt] = useState([]);
   const {catId=0} = useParams();
-    useEffect(() =>{
-      if(catId != null){
-        getProductos(catId).then((res=[]) => {     
-          setArt(res);
+    useEffect(() =>{  
+      if(!(parseInt(catId) === 0)){
+        getItemsByCondition(parseInt(catId),"ARTICULOS").then((result) => {
+          setArt(result);
+      });
+      }
+      else{
+        getItems("ARTICULOS").then((result) => {
+          setArt(result);
         });
-      } 
+      }
+      
     },[catId]);
-    
-
-
   return (
     <div className='list-container'>
-        
         <div className="item-list"> 
             {
               

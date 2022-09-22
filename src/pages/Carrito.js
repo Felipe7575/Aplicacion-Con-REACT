@@ -1,4 +1,4 @@
-import{React,useContext,useState,useEffect} from 'react';
+import{useContext,useState,useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import ListCarrito from '../components/ListCarrito';
 import { AppContext } from '../app/Provider';
@@ -75,7 +75,7 @@ const Carrito = () => {
         <p>¡Comience explorando nuestra tienda de productos!</p>
         <Button onClick={click}> SEGUIR COMPRANDO </Button>
       </div>
-      <img src={carritoVacio}></img>
+      <img src={carritoVacio} alt="carrito vacio"></img>
 
     </div>
   );}
