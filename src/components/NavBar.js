@@ -9,24 +9,34 @@ import{useContext, useEffect} from 'react';
 import {AppContext} from '../app/Provider';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Login from '../pages/Login';
 
 import CarritoIcon from './CarritoIcon';
+import { LoginItem } from './LoginItem';
 
 
 const NavBar = ({CANT}) => {
   const [cant,setCant] = useState(0);
-  const{cart} = useContext(AppContext);
+  const{cart,logueado,setIsComponentVisible,isComponentVisible} = useContext(AppContext);
  
 
   useEffect(() => {
      setCant(cart.length);
   }, [cart]);
+  
 
   const navigate = useNavigate();
   const click= (dir) => {navigate(dir);}
 
+
+ 
+  const login = () => {
+    setIsComponentVisible(true);
+  }
+ 
   return (
-    <Navbar key='md' bg="light" expand="md" className="mb-3">
+    <>
+    <Navbar key='lg' bg="light" expand="lg" className="mb-3">
       <Container fluid className='containerNavBar'>
         <Navbar.Brand onClick={()=>click("/")} className="navBarBrand">
             <img
@@ -38,14 +48,14 @@ const NavBar = ({CANT}) => {
             />{' '}
             <p>TODO 3D RAMOS</p>
           </Navbar.Brand>
-        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
+        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
         <Navbar.Offcanvas
-          id={`offcanvasNavbar-expand-md`}
-          aria-labelledby={`offcanvasNavbarLabel-expand-md`}
+          id={`offcanvasNavbar-expand-lg`}
+          aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
           placement="end"
         >
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
+            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
               TODO 3D RAMOS
             </Offcanvas.Title>
           </Offcanvas.Header>
@@ -55,7 +65,7 @@ const NavBar = ({CANT}) => {
               <Nav.Link onClick={()=>click("/contact")}>CONTACTOS</Nav.Link>
               <NavDropdown
                 title="PRODUCTOS"
-                id={`offcanvasNavbarDropdown-expand-md`}
+                id={`offcanvasNavbarDropdown-expand-lg`}
               >
                 <NavDropdown.Item onClick={()=>click("/productos/1")}>Filamento PLA</NavDropdown.Item>
                 <NavDropdown.Item onClick={()=>click("/productos/2")}>Filamento ABS</NavDropdown.Item>
@@ -63,6 +73,7 @@ const NavBar = ({CANT}) => {
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={()=>click("/productos/0")}>CATALOGO</NavDropdown.Item>
               </NavDropdown>
+              {logueado.email=="" && <Nav.Link onClick={()=>login()}>LOGIN</Nav.Link>}
               <div carritoIcon> 
                 <CarritoIcon CANT={cant}></CarritoIcon>
               </div>
@@ -71,6 +82,8 @@ const NavBar = ({CANT}) => {
         </Navbar.Offcanvas>
       </Container>
     </Navbar>  
+    {isComponentVisible&&<Login/>}
+    </>
   )
 }
 

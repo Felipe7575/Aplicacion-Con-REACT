@@ -1,17 +1,19 @@
 import {Outlet} from 'react-router-dom';
 import React from 'react'
 import NavBar  from '../components/NavBar';
-import Provider from './Provider';
+
+import ProviderCarrito from './Provider';
+
 
 
  const Layout = () => {
 
   return (
     <div className="container-general">
-        <Provider>
+        <ProviderCarrito>
           <NavBar> </NavBar>
           <Outlet/>
-        </Provider>
+        </ProviderCarrito>
     </div>
   )
 }

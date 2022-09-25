@@ -1,0 +1,77 @@
+.loginItem{
+
+    position:fixed;
+    top: 20%;
+    left: 25%;
+    z-index: 3;
+
+    border-style: solid;
+    border-width: 1px;
+    
+    width: 50%;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+    .registerLogin{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 30px;
+        button{
+            width: 48%;
+            height: 50px;    
+            background-color: white;
+            
+            border-color: rgb(2, 82, 49);
+            border-width: 1px;
+            border-radius: 20px;
+
+            &:hover {
+                transition-duration: .5s;
+                background-color: rgb(7, 124, 75);
+            }
+        }
+    }
+    .formInput{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        h1,h2,input{
+            padding-top: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            width: 48%;
+            height: 50px;    
+            background-color: white;
+            margin-top: 10px;
+
+            border-color: rgb(2, 82, 49);
+            border-width: 1px;
+            border-radius: 20px;
+
+            &:hover {
+                transition-duration: .5s;
+                background-color: rgb(7, 124, 75);
+            }
+        }
+        
+    }
+}

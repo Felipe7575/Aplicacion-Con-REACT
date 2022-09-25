@@ -6,6 +6,7 @@ import Layout from '../app/Layout';
 import Carrito  from '../pages/Carrito';
 import ItemDetailsContainer from '../pages/ItemDetailsContainer';
 import ItemListContainer from '../pages/ItemListContainer';
+import  Login  from '../pages/Login';
 
 const Router = () => {
     
@@ -18,8 +19,11 @@ const Router = () => {
                 <Route path="/itemDetailsContainer/:artId" element={<ItemDetailsContainer/>}/>
                 <Route path="/productos/:catId" element={<ItemListContainer/>}/>"  
                 <Route path="/carrito" element={<Carrito/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="*" element={<div>404</div> } />
+                
             </Route>
+                
         </Routes>
     </BrowserRouter>
     );

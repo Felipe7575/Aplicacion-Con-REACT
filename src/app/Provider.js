@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 
 const Provider = ({ children }) => {
+    // relacionado al carrito
     const [cart, setCart] = useState([]);
     let carrito = [];
     const addItem = (art, cantidad) => {
@@ -18,9 +19,12 @@ const Provider = ({ children }) => {
     const clear = () => {
         setCart([]);
     };
+    // relacionado a la secion de usuario
+    const [logueado, setLogueado] = useState({email:'',password:''});
+    const [isComponentVisible,setIsComponentVisible] = useState(false);
 
     return(
-        <AppContext.Provider value={{cart, addItem, existeItem,removeItem,clear}}>
+        <AppContext.Provider value={{cart, addItem, existeItem,removeItem,clear,logueado, setLogueado,isComponentVisible,setIsComponentVisible}}>
             {children}
         </AppContext.Provider>
     );
