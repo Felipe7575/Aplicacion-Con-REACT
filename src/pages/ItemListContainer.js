@@ -11,7 +11,7 @@ const ItemListContainer = () => {
   const {catId=0} = useParams();
     useEffect(() =>{  
       if(!(parseInt(catId) === 0)){
-        getItemsByCondition(parseInt(catId),"ARTICULOS").then((result) => {
+        getItemsByCondition("ARTICULOS","catId",parseInt(catId)).then((result) => {
           setArt(result);
       });
       }

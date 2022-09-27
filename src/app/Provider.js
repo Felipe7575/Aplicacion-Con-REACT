@@ -20,7 +20,7 @@ const Provider = ({ children }) => {
         setCart([]);
     };
     // relacionado a la secion de usuario
-    const [logueado, setLogueado] = useState({email:'',password:''});
+    const [logueado, setLogueado] = useState({email:'',password:'', userId:'', name:'', direccion:'', telefono:''});
     const [isComponentVisible,setIsComponentVisible] = useState(false);
 
     return(

@@ -12,7 +12,7 @@ import ProviderCarrito from './Provider';
     <div className="container-general">
         <ProviderCarrito>
           <NavBar> </NavBar>
-          <Outlet/>
+          <Outlet className="container-general"/>
         </ProviderCarrito>
     </div>
   )

@@ -1,4 +1,4 @@
-import { collection, getDocs, query, doc, getDoc, deleteDoc, updateDoc, setDoc, where } from "firebase/firestore";
+import { collection, getDocs, query, doc, getDoc, deleteDoc, updateDoc, setDoc, where ,addDoc} from "firebase/firestore";
 import { db } from './firebase';
 
 
@@ -8,7 +8,11 @@ export const createItem = async(coleccion,id,obj) => {
     // const colRef = collection(db, coleccion,33);
     // const data = await setDoc(colRef, obj);
     // return data.id;
-    await setDoc(doc(db, coleccion, id), obj);
+    if(id!=="0"){
+        await setDoc(doc(db, coleccion, id), obj);
+        return;
+    }
+    await addDoc(collection(db, coleccion),obj);
 }
 
 // UPDATE
@@ -26,9 +30,9 @@ export const getItems= async (coleccion)  => {
 
 // READ WITH WHERE
 // Tener en cuenta que el tipo de dato de la condición debe coincidir con el tipo de dato que hay en Firebase o no obtendré un dato de respuesta
-export const getItemsByCondition = async (value,coleccion) => {
+export const getItemsByCondition = async (coleccion,clave,value) => {
     const colRef = collection(db, coleccion);
-    const result = await getDocs(query(colRef, where('catId', '==', value)));
+    const result = await getDocs(query(colRef, where(clave, '==', value)));
     return getArrayFromCollection(result);
 }
 
@@ -44,7 +48,7 @@ export const deleteItem = async (id) => {
     await deleteDoc(doc(colRef, id));
 }
 
-const getArrayFromCollection = (collection) => {
+export const getArrayFromCollection = (collection) => {
     return collection.docs.map(doc => {
         return { ...doc.data(), id: doc.id };
     });

@@ -74,6 +74,7 @@ const NavBar = ({CANT}) => {
                 <NavDropdown.Item onClick={()=>click("/productos/0")}>CATALOGO</NavDropdown.Item>
               </NavDropdown>
               {logueado.email=="" && <Nav.Link onClick={()=>login()}>LOGIN</Nav.Link>}
+              {!(logueado.email=="") && <Nav.Link onClick={()=>click("/ordenes")}>ORDENES</Nav.Link>}
               <div carritoIcon> 
                 <CarritoIcon CANT={cant}></CarritoIcon>
               </div>

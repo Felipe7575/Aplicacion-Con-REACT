@@ -2,18 +2,18 @@ import React, { useEffect } from 'react'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
 import {auth} from '../app/firebase'
 import { LoginItem } from '../components/LoginItem';
-import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../app/Provider';
 import {useContext } from 'react';
 import Swal from 'sweetalert2';
 import  {useRef}  from 'react';
+import {createItem,getItemById } from '../app/api'
 
 
 
  const Login = () => {
 
     const{ isComponentVisible,setIsComponentVisible, setLogueado} = useContext(AppContext);
-    const navigate = useNavigate();
+
 
     const ref = useRef(null);
     const handleClickOutside = (e) => {
@@ -43,24 +43,27 @@ import  {useRef}  from 'react';
     const register = (usuario)    => {
         createUserWithEmailAndPassword(auth,usuario.email,usuario.password)
             .then((userCredential) => { 
-                console.log('Usuario creado',userCredential.user);
+                createItem("USUARIO",(userCredential.user.uid),{email:usuario.email,userId:userCredential.user.uid,telefono:usuario.telefono,nombre:usuario.name,direccion:usuario.direccion});
+                login(usuario);
             })
             .catch((error) => {
-                console.log('Error',error.message);
                 Swal.fire('Eror al intentar crear el usuario',"Email o contraseña invalidas",'error');
             });
     }
     
 
     const login = (usuario)    => {
+        console.log(usuario);
         signInWithEmailAndPassword(auth,usuario.email,usuario.password)
             .then((userCredential) => { 
-                setLogueado({email:usuario.email,password:usuario.password});
-                console.log('Usuario logueado',userCredential.user);
-                navigate("/");
+                setIsComponentVisible(false);
+                getItemById("USUARIO",userCredential.user.uid)
+                    .then((doc) => {
+                        setLogueado({email:doc.email, userId:doc.userId, name:doc.nombre, direccion:doc.direccion, telefono:doc.telefono});
+                    });
+
             })
             .catch((error) => {
-                console.log('Error',error.message);
                 Swal.fire('Eror al intentar iniciar sesión',"Email o contraseña invalidas",'error');
             });
     }

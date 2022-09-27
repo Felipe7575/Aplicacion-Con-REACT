@@ -4,6 +4,7 @@ import ListCarrito from '../components/ListCarrito';
 import { AppContext } from '../app/Provider';
 import { useNavigate } from 'react-router-dom';
 import carritoVacio from '../assets/img/carrito-de-compras.png';
+import {createItem} from '../app/api'
 
 
 
@@ -11,7 +12,7 @@ import carritoVacio from '../assets/img/carrito-de-compras.png';
 
 const Carrito = () => {
   
-  const{cart,removeItem,clear} = useContext(AppContext);
+  const{cart,removeItem,clear, logueado, setIsComponentVisible} = useContext(AppContext);
   const [total, setTotal] = useState(0);
   useEffect(() => {
     let sum = 0;
@@ -28,6 +29,32 @@ const Carrito = () => {
 
     const navigate = useNavigate();
     const click= () => {navigate('/productos/0');}
+    const finalizar = (email, password) => {
+      if(email===''){
+        setIsComponentVisible(true)
+      }else{
+        if(cart.length!==0){
+          const items=[];
+          cart.forEach((item) => {
+            items.push({art:item.art.id,name:item.art.name,cantidad:item.cantidad});
+            });
+          
+        const order = {
+          direccion: logueado.direccion,
+          email: logueado.email,
+          nombre: logueado.name,
+          telefono: logueado.telefono,
+          items: items,
+          total: total,
+          estado: "pendiente",
+
+          }
+          createItem("ORDERS","0",order);
+          clear();
+        }
+      }
+      
+    }
 
     //===============================================================================
     //Lista de carrito
@@ -52,7 +79,7 @@ const Carrito = () => {
               <div className='botoneraCarrito'>
                   <Button onClick={click}> SEGUIR COMPRANDO </Button>
                   <Button onClick={clear}> BORRAR CARRITO </Button>
-                  <Button > FINALIZAR COMPRA </Button>
+                  <Button onClick={()=>finalizar(logueado.email, logueado.password)}> FINALIZAR COMPRA </Button>
               </div>  
               
             </div>
