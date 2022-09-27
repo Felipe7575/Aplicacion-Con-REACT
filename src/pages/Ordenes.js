@@ -30,7 +30,6 @@ export const Ordenes = () => {
     
 
     if(!(order.lenght==0)){
-            console.log(order);
             return(
                 <div className="orderList">
                     {order.map((item) => {
