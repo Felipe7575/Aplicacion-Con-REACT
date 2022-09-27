@@ -5,7 +5,7 @@ import {useState} from 'react';
 
 export const LoginItem = ({register,login}) => {
 
-    const [registerSingin, setRegisterSingin] = useState(true);
+    const [registerSingin, setRegisterSingin] = useState(false);
 
     const [usuario, setUsuario] = useState({email:'',password:'', name:'', direccion:'', telefono:''});
     const changeContraseñaEmail = ({target:{id , value}})=>{
