@@ -26,7 +26,11 @@ const ItemDetailsContainer = () => {
 
     const click= () => {navigate('/carrito');}
     
-    const onAdd = (cant) => { setCant(cant); addItem(art,cant)}
+    const onAdd = (cant) => { 
+        if(art.stock>0){
+        setCant(cant); addItem(art,cant)
+        }
+    }
     
     useEffect(() => {   
         getItemById("ARTICULOS",artId).then((res) => {
