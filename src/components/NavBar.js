@@ -36,7 +36,7 @@ const NavBar = ({CANT}) => {
  
   return (
     <>
-    <Navbar key='lg' bg="light" expand="lg" className="mb-3">
+    <Navbar key='lg' bg="light" expand="lg">
       <Container fluid className='containerNavBar'>
         <Navbar.Brand onClick={()=>click("/")} className="navBarBrand">
             <img
@@ -62,7 +62,6 @@ const NavBar = ({CANT}) => {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link onClick={()=>click("/")}>INICIO</Nav.Link>
-              <Nav.Link onClick={()=>click("/contact")}>CONTACTOS</Nav.Link>
               <NavDropdown
                 title="PRODUCTOS"
                 id={`offcanvasNavbarDropdown-expand-lg`}

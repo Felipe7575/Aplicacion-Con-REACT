@@ -40,7 +40,7 @@ const ItemDetailsContainer = () => {
         },[]);
 
         return ( 
-            <div className='background'>
+            <div className='background container-general'>
                 <div className='containerItemDetails'>
                     <div>
                         <Carousel variant="dark" className="d-block carouselImgDetails">

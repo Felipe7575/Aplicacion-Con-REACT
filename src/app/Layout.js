@@ -1,7 +1,7 @@
 import {Outlet} from 'react-router-dom';
 import React from 'react'
 import NavBar  from '../components/NavBar';
-
+import Footer from '../components/Footer';
 import ProviderCarrito from './Provider';
 
 
@@ -9,12 +9,13 @@ import ProviderCarrito from './Provider';
  const Layout = () => {
 
   return (
-    <div className="container-general">
+   
         <ProviderCarrito>
           <NavBar> </NavBar>
           <Outlet className="container-general"/>
+          <Footer></Footer>
         </ProviderCarrito>
-    </div>
+
   )
 }
 

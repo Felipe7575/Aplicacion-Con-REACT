@@ -1,9 +1,9 @@
 .item-list{
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(165, 183, 199);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    padding: 20px;
 
 }
 

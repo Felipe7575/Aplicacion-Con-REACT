@@ -31,28 +31,32 @@ export const Ordenes = () => {
 
     if(!(order.lenght==0)){
             return(
-                <div className="orderList">
-                    {order.map((item) => {
-                        return(
-                        <div className="orden" id={item.id}>
-                            <h3>Orden Email: {item.email}</h3>
-                            <h3>Orden N°: {item.id}</h3>
-                            <h4>Estado: {item.estado}</h4>
-                            <h4>Total: ${item.total}</h4>
-                        </div>);
-                    })}
+                <div className="container-general "style={{padding:"30px"}}>
+                    <div className="orderList">
+                        {order.map((item) => {
+                            return(
+                            <div className="orden" id={item.id}>
+                                <h3>Orden Email: {item.email}</h3>
+                                <h3>Orden N°: {item.id}</h3>
+                                <h4>Estado: {item.estado}</h4>
+                                <h4>Total: ${item.total}</h4>
+                            </div>);
+                        })}
+                    </div>
                 </div>
             );
         }
         else{
             return (
-                <div className='carritoVacio '>
-                    <div>
-                        <p>No tiene ordenes pendientes.</p>
-                        <p>¡Comience explorando nuestra tienda de productos!</p>
-                        <Button onClick={click}> SEGUIR COMPRANDO </Button>
+                <div className="container-general" style={{padding:"30px"}}>
+                    <div className='carritoVacio'>
+                        <div>
+                            <p>No tiene ordenes pendientes.</p>
+                            <p>¡Comience explorando nuestra tienda de productos!</p>
+                            <Button onClick={click}> SEGUIR COMPRANDO </Button>
+                        </div>
+                        <img src={carritoVacio} alt="carrito vacio"></img>
                     </div>
-                    <img src={carritoVacio} alt="carrito vacio"></img>
                 </div>
             );
         }

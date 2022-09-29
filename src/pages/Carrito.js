@@ -60,7 +60,7 @@ const Carrito = () => {
     //Lista de carrito
         const carritoList = () => {
           return(
-            <div className='carritoList'>
+            <div className='carritoList container-general'>
                   <div className='carritoTable'>
                     <p>Producto</p>
                     <p>Cantidad</p>
@@ -96,14 +96,15 @@ const Carrito = () => {
   }
   else{
   return (
-    <div className='carritoVacio '>
-      <div>
-        <p>Su carrito de compras está vacío.</p>
-        <p>¡Comience explorando nuestra tienda de productos!</p>
-        <Button onClick={click}> SEGUIR COMPRANDO </Button>
+    <div className='container-general'>
+      <div className='carritoVacio '>
+        <div>
+          <p>Su carrito de compras está vacío.</p>
+          <p>¡Comience explorando nuestra tienda de productos!</p>
+          <Button onClick={click}> SEGUIR COMPRANDO </Button>
+        </div>
+        <img src={carritoVacio} alt="carrito vacio"></img>
       </div>
-      <img src={carritoVacio} alt="carrito vacio"></img>
-
     </div>
   );}
 }

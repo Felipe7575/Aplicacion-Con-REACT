@@ -23,7 +23,7 @@ const ItemListContainer = () => {
       
     },[catId]);
   return (
-    <div className='list-container'>
+    <div className='list-container container-general'>
         <div className="item-list"> 
             {
               

@@ -5,7 +5,7 @@ import ItemListContainer from "../pages/ItemListContainer";
 
 const Home = () => {
     return (
-      <div className='item-list-container'>
+      <div className='item-list-container container-general'>
           <div>
             <b>OFERTAS DE LA SEMANA</b>
           </div>          

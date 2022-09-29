@@ -5,7 +5,8 @@
 @import './itemList';
 @import './carrito';
 @import './login';
-@import './orderList.scss';
+@import './orderList';
+@import './footer';
 
 *{
     margin: 0;
@@ -16,16 +17,11 @@
 
 .container-general{
     min-height: 100vh;
-    background-color: rgb(165, 183, 199);
-}
+    background-image: linear-gradient(to right top, #cdb7c3, #cfbdcd, #d0c3d6, #d0cadf, #d0d1e7, #ced6ec, #ccdbef, #cae0f2, #c7e4f2, #c6e7f0, #c7eaed, #caecea);
 
+}
 .background{
+    height: 100%;
     width: 100%;
-    background-color: rgb(165, 183, 199);
+    
 }
-
-
-
-
-
-
